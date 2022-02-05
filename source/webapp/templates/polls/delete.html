@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Poll delete page{% endblock %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Do you really want to delete {{ poll.question }} poll?</h2>
+        {% include 'partial/form.html' with button_text="Delete" %}
+    </form></br>
+    <form method="GET" action="{% url 'main_page' %}" target="_blank">
+   <button>No</button>
+  </form>
+{% endblock %}

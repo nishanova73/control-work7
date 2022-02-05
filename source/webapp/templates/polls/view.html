@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Poll {{ poll.pk }}{% endblock %}
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'poll_choice_create' poll.pk %}">Create choice</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'poll_update' poll.pk %}">Edit poll</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'poll_delete' poll.pk %}">Delete poll</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <h1>{{ poll.question }}</h1>
+    <p>{{ task.created_at }}</p>
+<h3>Choices</h3>
+    {% for choice in choices %}
+        <span>{{ forloop.counter }}</span>
+        <p>{{ choice.text }}</p>
+        <p><a href="{% url 'choice_update_view' choice.pk %}">Edit choice</a></p>
+        <p><a href="{% url 'choice_delete_view' choice.pk %}">Delete choice</a></p>
+    {% endfor %}
+{% endblock %}

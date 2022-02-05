@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tasks page{% endblock %}
+{% block content %}
+<h1>POLL PAGE</h1>
+</br>
+</br>
+     {% if is_paginated %}
+         {% include 'partial/pagination.html' %}
+     {% endif %}
+
+    {% for poll in polls %}
+        <h3>{{ poll.question }}</h3>
+        <p>
+            <a href='{% url "poll_view" poll.pk %}'>Show the poll ✍︎</a>
+            <a href='{% url "poll_update" poll.pk%}'>Edit the poll ✎</a>
+            <a href='{% url "poll_delete" poll.pk%}'>Delete the poll ✂︎</a>
+        </p>
+    {% endfor %}
+
+    {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+    {% endif %}
+
+{% endblock %}
