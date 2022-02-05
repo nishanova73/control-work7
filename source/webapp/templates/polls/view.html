@@ -18,7 +18,7 @@
     {% for choice in choices %}
         <span>{{ forloop.counter }}</span>
         <p>{{ choice.text }}</p>
-        <p><a href="{% url 'choice_update_view' choice.pk %}">Edit choice</a></p>
-        <p><a href="{% url 'choice_delete_view' choice.pk %}">Delete choice</a></p>
+        <p><a href="{% url 'choice_update' choice.pk %}">Edit choice</a></p>
+        <p><a href="{% url 'choice_delete' choice.pk %}">Delete choice</a></p>
     {% endfor %}
 {% endblock %}
