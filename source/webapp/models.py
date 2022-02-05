@@ -7,7 +7,7 @@ from django.urls import reverse
 
 # Create your models here.
 class Poll(models.Model):
-    question = models.TextField(max_length=200, null=False, blank=False, verbose_name="Description",
+    question = models.TextField(max_length=200, null=False, blank=False, verbose_name="Question",
                                 validators=(MinLengthValidator(7),))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date created")
 
@@ -21,7 +21,7 @@ class Poll(models.Model):
 
 
 class Choice(models.Model):
-    text = models.TextField(max_length=200, null=False, blank=False, verbose_name="Description",
+    text = models.TextField(max_length=200, null=False, blank=False, verbose_name="Choice's text",
                                 validators=(MinLengthValidator(10),))
     poll = models.ForeignKey("webapp.Poll", on_delete=models.CASCADE,
                              related_name="choices",
