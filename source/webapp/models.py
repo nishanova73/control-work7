@@ -11,6 +11,9 @@ class Poll(models.Model):
                                 validators=(MinLengthValidator(7),))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date created")
 
+    def get_absolute_url(self):
+        return reverse('poll_view', kwargs={'pk': self.pk})
+
     def __str__(self):
         return f"{self.pk}. {self.question}."
 
@@ -27,6 +30,9 @@ class Choice(models.Model):
                              related_name="choices",
                              verbose_name="Poll",
                              )
+
+    def get_absolute_url(self):
+        return reverse('choice_view', kwargs={'pk': self.pk})
 
     def __str__(self):
         return f"{self.pk}. {self.text}."
