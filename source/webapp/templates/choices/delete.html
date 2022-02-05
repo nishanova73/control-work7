@@ -8,7 +8,7 @@
         {% include 'partial/form.html' with button_text="Delete" %}
     </form>
 </br>
-    <form method="GET" action="{% url 'poll_view' poll.pk %}" target="_blank">
+    <form method="GET" action="{% url 'main_page' %}" target="_blank">
    <button>No</button>
   </form>
 {% endblock %}
