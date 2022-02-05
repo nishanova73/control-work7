@@ -20,10 +20,15 @@ class ChoiceForm(forms.ModelForm):
         fields = ('text',)
 
 class AnswerForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        choice = kwargs.pop('choice')
+        super().__init__(*args, **kwargs)
+        self.fields['choice'].queryset = choice
+
     class Meta:
         model = Answer
-        exclude = []
-        fields = ('choice',)
+        exclude = ["poll", "created_at"]
+        widgets = {"choice": forms.RadioSelect}
 
 class PollDeleteForm(forms.ModelForm):
     class Meta:

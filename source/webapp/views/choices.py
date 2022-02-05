@@ -28,9 +28,6 @@ class ChoiceUpdateView(UpdateView):
         return reverse("poll_view", kwargs={"pk": self.object.poll.pk})
 
 class ChoiceDeleteView(DeleteView):
-    form_class = ChoiceForm
     model = Choice
     template_name = "choices/delete.html"
-
-    def get_success_url(self):
-        return reverse("choice_delete", kwargs={"pk": self.object.choice.pk})
+    success_url = reverse_lazy('main_page')
