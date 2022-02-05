@@ -1,18 +1,50 @@
 [
 {
     "model": "webapp.poll",
-    "pk": 1,
+    "pk": 2,
     "fields": {
-        "question": "what do I need to cook a cake?",
-        "created_at": "2022-02-05T05:25:09.419Z"
+        "question": "what do I ness to make my hw?",
+        "created_at": "2022-02-05T06:26:13.952Z"
     }
 },
 {
-    "model": "webapp.choice",
-    "pk": 1,
+    "model": "webapp.poll",
+    "pk": 3,
     "fields": {
-        "text": "you need eggs and flour.",
-        "poll": 1
+        "question": "adlkvjieahrncvioaehybn???",
+        "created_at": "2022-02-05T06:27:37.224Z"
+    }
+},
+{
+    "model": "webapp.poll",
+    "pk": 4,
+    "fields": {
+        "question": "kljaeriudfyvhbjeariouvhyawerml;?",
+        "created_at": "2022-02-05T06:27:43.781Z"
+    }
+},
+{
+    "model": "webapp.poll",
+    "pk": 5,
+    "fields": {
+        "question": "a,kdshvuyiheabjfkviho?",
+        "created_at": "2022-02-05T06:27:49.884Z"
+    }
+},
+{
+    "model": "webapp.poll",
+    "pk": 6,
+    "fields": {
+        "question": "lrvyqehajrkvuha3roe?",
+        "created_at": "2022-02-05T06:27:57.434Z"
+    }
+},
+{
+    "model": "webapp.poll",
+    "pk": 7,
+    "fields": {
+        "question": ",ajerdsyfvcgabepd97yhj89ujm,?",
+        "created_at": "2022-02-05T06:28:05.800Z"
     }
 }
 ]
