@@ -55,7 +55,7 @@ class Answer(models.Model):
                              )
 
     def __str__(self):
-        return f"{self.pk}. {self.created_at}."
+        return f"{self.pk}. {self.choice}."
 
     class Meta:
         db_table = 'Answers'

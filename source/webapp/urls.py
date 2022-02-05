@@ -7,7 +7,8 @@ from webapp.views import (IndexView,
                           PollDeleteView,
                           CreateChoiceView,
                           ChoiceUpdateView,
-                          ChoiceDeleteView
+                          ChoiceDeleteView,
+                          CreateAnswerView,
                           )
 
 urlpatterns = [
@@ -18,6 +19,7 @@ urlpatterns = [
     path('poll_view/<int:pk>/update/', PollUpdateView.as_view(), name="poll_update"),
     path('poll_view/<int:pk>/delete/', PollDeleteView.as_view(), name="poll_delete"),
     path('poll/<int:pk>/choice/add/', CreateChoiceView.as_view(), name="poll_choice_create"),
+    path('poll/<int:pk>/answer/add/', CreateAnswerView.as_view(), name="poll_answer_create"),
     path('poll/<int:pk>/choice/update/', ChoiceUpdateView.as_view(), name="choice_update"),
     path('poll/<int:pk>/choice/delete/', ChoiceDeleteView.as_view(), name="choice_delete"),
 ]

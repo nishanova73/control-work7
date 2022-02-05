@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.forms import widgets
-from webapp.models import Poll, Choice
+from webapp.models import Poll, Choice, Answer
 
 class PollForm(forms.ModelForm):
     class Meta:
@@ -19,6 +19,11 @@ class ChoiceForm(forms.ModelForm):
         model = Choice
         fields = ('text',)
 
+class AnswerForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        exclude = []
+        fields = ('choice',)
 
 class PollDeleteForm(forms.ModelForm):
     class Meta:

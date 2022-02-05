@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from webapp.models import Poll, Choice
+from webapp.models import Poll, Choice, Answer
 
 
 class PollAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ class PollAdmin(admin.ModelAdmin):
 
 admin.site.register(Poll, PollAdmin)
 admin.site.register(Choice)
+admin.site.register(Answer)

@@ -16,7 +16,7 @@ class IndexView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        return queryset.order_by("-created_at").reverse().order_by("question").reverse()
+        return queryset.order_by("-created_at")
 
 
 class CreatePollView(CreateView):
