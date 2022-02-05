@@ -41,3 +41,23 @@ class Choice(models.Model):
         db_table = 'Choices'
         verbose_name = 'choice'
         verbose_name_plural = 'choices'
+
+
+class Answer(models.Model):
+    poll = models.ForeignKey("webapp.Poll", on_delete=models.CASCADE,
+                             related_name="polls",
+                             verbose_name="Poll",
+                             )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date created")
+    choice = models.ForeignKey("webapp.Choice", on_delete=models.CASCADE,
+                             related_name="choices",
+                             verbose_name="Choice",
+                             )
+
+    def __str__(self):
+        return f"{self.pk}. {self.created_at}."
+
+    class Meta:
+        db_table = 'Answers'
+        verbose_name = 'answer'
+        verbose_name_plural = 'answers'
