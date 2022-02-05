@@ -8,7 +8,8 @@ from webapp.views import (IndexView,
                           CreateChoiceView,
                           ChoiceUpdateView,
                           ChoiceDeleteView,
-                          CreateAnswerView,
+                          CreateAnswerView
+                          # answer_create_view
                           )
 
 urlpatterns = [

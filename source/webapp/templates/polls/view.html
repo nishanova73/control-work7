@@ -18,12 +18,14 @@
     <h1>{{ poll.question }}</h1>
     <p>{{ poll.created_at }}</p>
 <h3>Choices</h3>
-    {% for choice in choices %}
+    {% for choice in poll.choices.all %}
         <span>{{ forloop.counter }}</span>
         <p>{{ choice.text }}</p>
         <p><a href="{% url 'choice_update' choice.pk %}">Edit choice</a></p>
         <p><a href="{% url 'choice_delete' choice.pk %}">Delete choice</a></p>
     {% endfor %}
 <h2>Answer</h2>
+    {% for choice in answer.choices.all %}
     <h3>{{ answer.choice }}</h3>
+    {% endfor %}
 {% endblock %}
