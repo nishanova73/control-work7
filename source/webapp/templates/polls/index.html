@@ -15,6 +15,7 @@
             <a href='{% url "poll_view" poll.pk %}'>Show the poll ✍︎</a>
             <a href='{% url "poll_update" poll.pk%}'>Edit the poll ✎</a>
             <a href='{% url "poll_delete" poll.pk%}'>Delete the poll ✂︎</a>
+            <a href='{% url "poll_answer_create" poll.pk%}'>Select Answer ☕︎︎</a>
         </p>
     {% endfor %}
 

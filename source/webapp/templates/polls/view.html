@@ -10,10 +10,13 @@
     <li class="nav-item">
         <a class="nav-link" href="{% url 'poll_delete' poll.pk %}">Delete poll</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'poll_answer_create' poll.pk %}">Create answer</a>
+    </li>
 {% endblock %}
 {% block content %}
     <h1>{{ poll.question }}</h1>
-    <p>{{ task.created_at }}</p>
+    <p>{{ poll.created_at }}</p>
 <h3>Choices</h3>
     {% for choice in choices %}
         <span>{{ forloop.counter }}</span>
@@ -21,4 +24,6 @@
         <p><a href="{% url 'choice_update' choice.pk %}">Edit choice</a></p>
         <p><a href="{% url 'choice_delete' choice.pk %}">Delete choice</a></p>
     {% endfor %}
+<h2>Answer</h2>
+    <h3>{{ answer.choice }}</h3>
 {% endblock %}
